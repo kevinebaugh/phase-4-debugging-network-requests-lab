@@ -64,10 +64,22 @@ developing your own process.
 
   - How I debugged:
 
+  1. NameError (uninitialized constant ToysController::Toys): indicated a typo somewhere
+  1. Updated to toy = Toy.create(toy_params) instead of "Toys"
+  1. Success according to the Rails logs
+
 - Update the number of likes for a toy
 
   - How I debugged:
 
+  1. Unhandled Rejection (SyntaxError): Unexpected end of JSON input indicated the server isn't returning JSON
+  1. Unpermitted parameter: :id pointed to an issue with strong params
+  1. Updated to return the toy JSON
+
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+
+  1. 404, maybe that route doesn't exist
+  1. Rails logs show ActionController::RoutingError (No route matches [DELETE] "/toys/3"):
+  1. 
